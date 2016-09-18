@@ -40,15 +40,15 @@ class App extends React.Component{
           <main>
             <h1>{this.props.title}</h1>
             <form onSubmit={this._handleClick.bind(this)}>
-              <label htmlFor="from_email">Please enter your email address:</label>
+              <label htmlFor="from_email">From email address:</label>
               <input ref={(node) => { from_email = node; }} id="from_email" type='text' required />
-              <label htmlFor="to_email">Email address to send to:</label>
+              <label htmlFor="to_email">To email address:</label>
               <input ref={(node) => { to_email = node; }} id="to_email" type='text' required />
-              <label htmlFor="subject">Email address to send to:</label>
+              <label htmlFor="subject">Subject:</label>
               <input ref={(node) => { subject = node; }} id="subject" type='text' required />
               <label htmlFor="body">Message:</label>
               <textarea id="body" required/>
-              <button type="submit">Send</button>
+              <button type="submit">SEND</button>
             </form>
           </main>
           <script dangerouslySetInnerHTML={{

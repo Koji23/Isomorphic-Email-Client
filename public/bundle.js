@@ -21535,7 +21535,7 @@
 	              _react2.default.createElement(
 	                'label',
 	                { htmlFor: 'from_email' },
-	                'Please enter your email address:'
+	                'From email address:'
 	              ),
 	              _react2.default.createElement('input', { ref: function ref(node) {
 	                  from_email = node;
@@ -21543,7 +21543,7 @@
 	              _react2.default.createElement(
 	                'label',
 	                { htmlFor: 'to_email' },
-	                'Email address to send to:'
+	                'To email address:'
 	              ),
 	              _react2.default.createElement('input', { ref: function ref(node) {
 	                  to_email = node;
@@ -21551,7 +21551,7 @@
 	              _react2.default.createElement(
 	                'label',
 	                { htmlFor: 'subject' },
-	                'Email address to send to:'
+	                'Subject:'
 	              ),
 	              _react2.default.createElement('input', { ref: function ref(node) {
 	                  subject = node;
@@ -21565,7 +21565,7 @@
 	              _react2.default.createElement(
 	                'button',
 	                { type: 'submit' },
-	                'Send'
+	                'SEND'
 	              )
 	            )
 	          ),
