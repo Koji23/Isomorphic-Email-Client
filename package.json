@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack && node server/server.js"
+    "start": "nodemon server/server.js",
+    "webpack": "webpack --progress --colors --watch"
   },
   "author": "Jordan Chong",
   "license": "ISC",
@@ -17,15 +18,11 @@
     "babel-preset-react": "^6.11.1",
     "babel-register": "^6.14.0",
     "body-parser": "^1.15.2",
-    "ejs": "^2.5.2",
     "express": "^4.14.0",
-    "griddle-react": "^0.6.1",
     "path": "^0.12.7",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
-    "react-redux": "^4.4.5",
-    "redux": "^3.6.0",
-    "redux-promise": "^0.5.3"
+    "socket.io": "^1.4.8"
   },
   "devDependencies": {
     "node-jsx": "^0.13.3",
