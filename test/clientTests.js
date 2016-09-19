@@ -11,16 +11,23 @@ var chaiJquery = require('chai-jquery');
 var _$ = require('jquery');
 
 describe('Isomorphic React Client', function() {
-  it('should be true', function() {
-    var props = { title: 'Isomorphic Email Client' };
+  before(function() {
+    global.props = { title: 'Isomorphic Email Client' };
     var html = ReactDOMServer.renderToString(
       React.createElement(App, props)
     );
     global.document = jsdom.jsdom(html);
     global.window = global.document.defaultView;
-    const $ = _$(window);
+    global.$ = _$(window);
     chaiJquery(chai, chai.util, $);
-    console.log($('body'));
-    expect(typeof html).to.equal('string');
+  });
+  it('should render an html element', function() {
+    expect($('html').length).to.exist;
+  });
+  it('should render a form element', function() {
+    expect($('form').length).to.exist;
+  });
+  it('should recieve title from props', function() {
+    expect($($('h1')[0]).text()).to.equal(props.title);
   });
 });
