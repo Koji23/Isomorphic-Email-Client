@@ -35,6 +35,8 @@ Solution:
 
   As an additional feature, server side javascript is rendered isomorphically on the server to decrease load times and improve SEO. Granted there isn't much in this example for indexing.
 
+  Both client to server and server to server connections as handled via socket.io to minimize overhead and increase bidirectional communication speed.
+
 Next steps:
 
   Enable Cluster for parallel job processing.
