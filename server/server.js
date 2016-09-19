@@ -34,9 +34,8 @@ app.use('/queue', kue.app);
 // Socket Events
 io.on('connection', function(socket) {
   socket.on('send_mail', function(data) {
-    console.log('Mail recieved: ', data);
+    // console.log('Mail recieved: ', data);
     emails.create(data, function(){
-      console.log('done!!!!!');
     });
     socket.emit('mail_enqueued', 'Mail has been queued!');
   });

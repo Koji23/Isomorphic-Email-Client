@@ -38,6 +38,7 @@ class App extends React.Component{
         </head>
         <body>
           <main>
+            <a href="./queue">Kue UI</a>
             <h1>{this.props.title}</h1>
             <form onSubmit={this._handleClick.bind(this)}>
               <label htmlFor="from_email">From email address:</label>

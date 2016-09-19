@@ -21524,6 +21524,11 @@
 	            'main',
 	            null,
 	            _react2.default.createElement(
+	              'a',
+	              { href: './queue' },
+	              'Kue UI'
+	            ),
+	            _react2.default.createElement(
 	              'h1',
 	              null,
 	              this.props.title

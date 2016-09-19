@@ -71,6 +71,20 @@ h1 {
   font-size: 30px;
   color: #ff6347;
 }
+a {
+  float: right;
+  font-size: 20px;
+  color: #FFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  font-size: 22px;
+}
 
 form label {
   display: block;
@@ -108,5 +122,11 @@ button {
   border: none;
 }
 
+button:hover {
+  background-color: #ff5236;
+}
 
+button:active {
+  background-color: #ff4125;
+}
 

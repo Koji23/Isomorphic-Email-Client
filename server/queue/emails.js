@@ -35,10 +35,12 @@ queue.on('error', (err) => {
 // CREATING JOBS
 
 function sendEmail(data, done) {  
+  data.title = data.from_email + ' ' + data.to_email + ' ' + new Date()
   queue.create('email', data)
     .priority('critical')
-    .attempts(8)
+    .attempts(3)
     .backoff(true)
+    .ttl(3000)
     .removeOnComplete(false)
     .save((err) => {
       if (err) {
@@ -53,14 +55,26 @@ function sendEmail(data, done) {
 
 // Process up to 20 jobs concurrently
 queue.process('email', 20, (job, done) => {  
+
   // This is the data we sent into the #create() function call earlier
   // We're setting it to a constant here so we can do some guarding against accidental writes
   const data = job.data;
   //... do other stuff with the data.
-  console.log('about to do stuff with this data...', data);
+  // console.log('about to do stuff with this data...', data);
   ServiceSocket.emit('send_email', data);
   // NEXT CONDITIONAL SET THIS DONE ONLY IF MAIL IS SENT????
-  done();
+  ServiceSocket.on('mail_sent_sg', function(msg) {
+    console.log(msg);
+    done();
+  });
+  ServiceSocket.on('mail_sent_mg', function(msg) {
+    console.log(msg);
+    done();
+  });
+  ServiceSocket.on('mail_failed_to_send', function(err) {
+    console.log(msg);
+    done(err);
+  });
 });
 
 module.exports = {  
