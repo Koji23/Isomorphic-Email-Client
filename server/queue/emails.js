@@ -1,6 +1,6 @@
 // Socket Client
 const io = require('socket.io-client');
-const ServiceSocket = io('http://localhost:8080');
+const ServiceSocket = io('https://warm-badlands-25443.herokuapp.com/') || io('http://localhost:8080');
 
 // REDIS CONFIGURATION
 

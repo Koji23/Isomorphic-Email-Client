@@ -5,7 +5,7 @@ class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      mainSocket: io('http://localhost:3000')
+      mainSocket: io('https://pacific-ocean-73685.herokuapp.com/') || io('http://localhost:3000')
     };
   }
   componentDidMount() {
