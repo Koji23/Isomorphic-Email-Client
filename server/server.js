@@ -13,6 +13,9 @@ var React = require('react');
 var ReactDOMServer = require('react-dom/server');
 var App = require('../client/components/app.jsx');
 
+var kue = require('kue');
+var emails = require('./queue/emails.js');
+
 // Middleware
 app.use(express.static('public'));
 
@@ -26,10 +29,15 @@ app.get('/', function(req, res) {
   res.send(html);
 });
 
+app.use('/queue', kue.app);  
+
 // Socket Events
 io.on('connection', function(socket) {
   socket.on('send_mail', function(data) {
     console.log('Mail recieved: ', data);
+    emails.create(data, function(){
+      console.log('done!!!!!');
+    });
     socket.emit('mail_enqueued', 'Mail has been queued!');
   });
 });

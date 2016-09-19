@@ -61,7 +61,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var props = window.PROPS;
-
 	// console.log(props.mainSocket);
 	_reactDom2.default.render(_react2.default.createElement(_app2.default, props), document); // rendering to the top level 'document' node is valide since the component renders a full html page. Otherwise there would be an invariant error here
 
