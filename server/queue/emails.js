@@ -74,13 +74,15 @@ queue.process('email', 20, (job, done) => {
   ServiceSocket.on('mail_failed_to_send', function(err) {
     console.log(msg);
     done(err);
+
   });
 });
 
 module.exports = {  
   create: (data, done) => {
     sendEmail(data, done);
-  }
+  },
+  queue: queue,
 };
 
 

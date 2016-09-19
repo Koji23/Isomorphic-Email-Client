@@ -46,7 +46,7 @@ io.on('connection', function(socket) {
 var PORT = 3000;
 
 server.listen(PORT, function(err) {
-  err ? console.log('server error', err) : console.log('server running port 3000');
+  err ? console.log('server error', err) : console.log('server running port', PORT);
 });
 
 module.exports = server;
